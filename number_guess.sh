@@ -25,7 +25,7 @@ else
     GAMES_PLAYED=$($PSQL "SELECT count(*) FROM games LEFT JOIN players USING(player_id) WHERE username = '$USERNAME'")
     BEST_GAME=$($PSQL "SELECT min(guesses) FROM games LEFT JOIN players USING(player_id) WHERE username = '$USERNAME'")
 
-  echo "Welcome back, $USERNAME! You have played $GAMES_PLAYED games, and your best game took $BEST_GAME guesses."
+  echo -e "\nWelcome back, $USERNAME! You have played $GAMES_PLAYED games, and your best game took $BEST_GAME guesses."
 
 fi
   
@@ -70,4 +70,3 @@ SAVE_EXIT() {
 }
 
 GUESS_MENU
-
